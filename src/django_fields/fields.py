@@ -240,3 +240,7 @@ class PickleField(models.TextField):
         # string saved to PickleField.
         except ValueError:
             return value
+
+from south.modelsinspector import add_introspection_rules
+add_introspection_rules([], ["^django_fields\.fields\.BaseEncryptedField"])
+add_introspection_rules([], ["^django_fields\.fields\.EncryptedCharField"])
